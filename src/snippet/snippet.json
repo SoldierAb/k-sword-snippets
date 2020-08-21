@@ -1,0 +1,208 @@
+{
+  "K.ajax.requestConfig": {
+    "prefix": "K.ajax.requestConfig",
+    "body": [
+      "K.ajax.requestConfig = conf => {",
+      " conf.baseURl = '$1'",
+      " conf.headers['Authorization'] = `Bear ${$2}` ",
+      " return conf",
+      "}"
+    ],
+    "description": "请求拦截器"
+  },
+  "K.ajax.requestError": {
+    "prefix": "K.ajax.requestError",
+    "body": [
+      "K.ajax.requestError = err => {",
+      " return Promise.reject(err) ",
+      "}"
+    ],
+    "description": "请求拦截器"
+  },
+  "K.ajax.responseRes": {
+    "prefix": "K.ajax.responseRes",
+    "body": [
+      "K.ajax.responseRes = response => {",
+      " // do something ...",
+      " '$1'",
+      " return response.data",
+      "}"
+    ],
+    "description": "返回拦截器"
+  },
+  "K.ajax.responseError": {
+    "prefix": "K.ajax.responseError",
+    "body": [
+      "K.ajax.responseError = err => {",
+      "  return Promise.reject(err) ",
+      "}"
+    ],
+    "description": "请求拦截器"
+  },
+  "K.ajax.get": {
+    "prefix": "K.ajax.get",
+    "body": [
+      "K.ajax.get('$1',{",
+      " // config",
+      " $2",
+      "})"
+    ],
+    "description": "get"
+  },
+  "K.ajax.post": {
+    "prefix": "K.ajax.post",
+    "body": [
+      "K.ajax.post('$1',{",
+      " // data ",
+      " $2",
+      "},{",
+      " // config",
+      " $3",
+      "})"
+    ],
+    "description": "post"
+  },
+  "K.ajax.request": {
+    "prefix": "K.ajax.request",
+    "body": [
+      "K.ajax.request({",
+      " url:'$1',",
+      " method:'$2',",
+      " data:'$3',",
+      " // customize config ... 其他属性请参考文档 ",
+      " // params: { }",
+      "})"
+    ],
+    "description": "post"
+  },
+  "K.ajax.delete": {
+    "prefix": "K.ajax.delete",
+    "body": [
+      "K.ajax.delete('$1',{",
+      " // config",
+      " $2",
+      "})"
+    ],
+    "description": "delete"
+  },
+  "K.ajax.head": {
+    "prefix": "K.ajax.head",
+    "body": [
+      "K.ajax.head('$1',{",
+      " // config",
+      " $2",
+      "})"
+    ],
+    "description": "head"
+  },
+  "K.ajax.options": {
+    "prefix": "K.ajax.options",
+    "body": [
+      "K.ajax.options('$1',{",
+      " // config",
+      " $2",
+      "})"
+    ],
+    "description": "options"
+  },
+  "K.ajax.put": {
+    "prefix": "K.ajax.put",
+    "body": [
+      "K.ajax.put('$1',{",
+      " // data ",
+      " $2",
+      "},{",
+      " // config",
+      " $3",
+      "})"
+    ],
+    "description": "put"
+  },
+  "K.ajax.patch": {
+    "prefix": "K.ajax.patch",
+    "body": [
+      "K.ajax.patch('$1',{",
+      " // data ",
+      " $2",
+      "},{",
+      " // config",
+      " $3",
+      "})"
+    ],
+    "description": "patch"
+  },
+  "K.conf.a": {
+    "prefix": "K.conf.a",
+    "body": [
+      "K.conf.add('$1',$2)"
+    ],
+    "description": "添加配置参数"
+  },
+  "K.conf.d": {
+    "prefix": "K.conf.d",
+    "body": [
+      "K.conf.delete('$1')"
+    ],
+    "description": "删除配置参数"
+  },
+  "K.conf.se": {
+    "prefix": "K.conf.se",
+    "body": [
+      "K.conf.setState({$1})"
+    ],
+    "description": "更新配置"
+  },
+  "K.conf.ge": {
+    "prefix": "K.conf.ge",
+    "body": [
+      "K.conf.get('$1')"
+    ],
+    "description": "获取配置参数"
+  },
+  "K.cookies.write": {
+    "prefix": "K.cookies.w",
+    "body": [
+      "K.cookies.write('$1',`${$2}`)"
+    ],
+    "description": "cookie写入"
+  },
+  "K.cookies.read": {
+    "prefix": "K.cookies.rea",
+    "body": [
+      "K.cookies.read('$1')"
+    ],
+    "description": "cookie读取"
+  },
+  "K.cookies.remove": {
+    "prefix": "K.cookies.rem",
+    "body": [
+      "K.cookies.remove('$1')"
+    ],
+    "description": "cookie删除"
+  },
+  "K.upload": {
+    "prefix": "K.upload",
+    "body": [
+      "K.upload({",
+      " headers: {",
+      "     Token: $1",
+      " },",
+      " action: $2,",
+      " file: $3,",
+      " data: {",
+      "   $4",
+      " },",
+      " onProgress: (e) => {",
+      "     console.log(e)",
+      " },",
+      " onSuccess: (res) => {",
+      "     console.log(res)",
+      " },",
+      " onError: (err) => {",
+      "     console.error(err)",
+      " }",
+      "})"
+    ],
+    "description": "上传"
+  }
+}
